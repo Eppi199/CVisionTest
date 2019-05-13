@@ -16,4 +16,4 @@ https://drive.google.com/open?id=1TW7bOO40Q6zKRuuXb5YCOMeWZyDSZsgY
   Тренировка:
 		//path to image, path to save Norm, path to trainModel
   Классификация
-		//path to image,  path to trainModel, path to pathNorm
+		//path to image,  path to trainModel, path to pathNorm, result path
