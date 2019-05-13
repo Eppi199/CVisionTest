@@ -36,7 +36,7 @@ void Train(const string &image_train_path, const string &norm_param_path, const 
 	SaveModel(trainResult, train_model_path); //сохраняем модель
 }
 
-void Classify(const string &image_class_path, const string &model_path, const string &norm_param_path)
+void Classify(const string &image_class_path, const string &model_path, const string &norm_param_path, const string &result_path)
 {
 	cout << "Classify started..." << endl;
 
@@ -57,7 +57,6 @@ void Classify(const string &image_class_path, const string &model_path, const st
 
 	vector<int> labels = recognize(models, x, UniqueSortedY); //распознаем
 
-	string result_path = "D:\\mnist\\result.txt";
 	SaveResults(labels, result_path);
 
 	cout << "Done." << endl;
@@ -72,8 +71,8 @@ int main(int argc, char* argv[])
 		Train(argv[2], argv[3], argv[4]);
 	}
 	else if (mode == "class"){
-		//path to image,  path to trainModel, path to pathNorm
-		Classify(argv[2], argv[3], argv[4]);
+		//path to image,  path to trainModel, path to pathNorm, result path
+		Classify(argv[2], argv[3], argv[4], argv[5]);
 	}
 	else
 		cout << "Please, enter true values" << endl;
